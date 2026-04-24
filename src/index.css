@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-darkBg text-white overflow-x-hidden font-sans;
+    cursor: none; /* Hide default cursor because we will use custom cursor */
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-white/5 backdrop-blur-md border border-white/10 shadow-[0_4px_30px_rgba(0,0,0,0.1)];
+  }
+  .glass-card {
+    @apply bg-white/5 backdrop-blur-xl border border-white/20 rounded-2xl p-6 transition-all duration-300;
+  }
+  .neon-border {
+    @apply border border-neonBlue/40;
+    box-shadow: 0 0 5px rgba(0, 240, 255, 0.1), inset 0 0 5px rgba(0, 240, 255, 0.05);
+  }
+  .neon-border-purple {
+    @apply border border-neonPurple/40;
+    box-shadow: 0 0 5px rgba(106, 92, 255, 0.1), inset 0 0 5px rgba(106, 92, 255, 0.05);
+  }
+  .text-glow {
+    text-shadow: 0 0 8px rgba(0, 240, 255, 0.4);
+  }
+  .text-glow-purple {
+    text-shadow: 0 0 8px rgba(106, 92, 255, 0.4);
+  }
+}
+
+/* Custom Scrollbar for when lenis is not active or for code blocks */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #00f0ff;
+}
