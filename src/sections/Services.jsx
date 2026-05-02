@@ -10,15 +10,20 @@ const services = [
 
 const Services = () => {
   return (
-    <section id="services-section" className="relative w-full min-h-screen py-24 px-8 md:px-24 z-10 flex items-center pointer-events-none">
+    <section id="about" className="relative w-full min-h-screen py-24 px-8 md:px-24 z-10 flex items-center pointer-events-none">
       <div className="flex flex-col lg:flex-row items-center gap-16 pointer-events-auto w-full max-w-7xl mx-auto">
         
         {/* Content Side */}
         <div className="w-full lg:w-1/2 flex flex-col">
-          <h2 className="text-4xl md:text-6xl font-bold mb-6 text-glow-purple">About Us</h2>
-          <h3 className="text-2xl font-semibold mb-4 text-neonBlue">100+ Team Strength</h3>
-          <h4 className="text-xl font-medium mb-6 text-white">Together, We Can Conquer Any Challenge</h4>
-          <p className="text-lg text-gray-400 mb-8 leading-relaxed">
+          <div className="w-full mb-16 md:mb-20 pointer-events-auto z-10 relative">
+            <h2 className="text-2xl md:text-4xl font-extrabold uppercase tracking-[0.2em] text-glow-purple inline-block relative">
+              About Us
+              <span className="absolute -bottom-6 left-0 w-32 h-[2px] bg-gradient-to-r from-neonPurple to-transparent opacity-50"></span>
+            </h2>
+          </div>
+          <h3 className="text-base font-semibold mb-4 text-neonBlue">100+ Team Strength</h3>
+          <h4 className="text-sm md:text-base font-medium mb-6 text-white">Together, We Can Conquer Any Challenge</h4>
+          <p className="text-sm text-gray-400 mb-8 leading-relaxed">
             Our team of highly skilled and experienced developers delivers exceptional user experiences across web and mobile applications. Over the years, we have consistently achieved our goals, building websites and apps with high traffic and strong user ratings. Our mission is to help startups grow into industry leaders by creating innovative solutions with a team of dedicated problem solvers.
           </p>
           
@@ -33,7 +38,7 @@ const Services = () => {
                 transition={{ duration: 0.5, delay: index * 0.2 }}
               >
                 {service.icon}
-                <h4 className="text-lg font-bold text-white group-hover:text-neonBlue transition-colors">{service.title}</h4>
+                <h4 className="text-sm font-medium text-white group-hover:text-neonBlue transition-colors">{service.title}</h4>
               </motion.div>
             ))}
           </div>

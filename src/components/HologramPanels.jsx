@@ -1,6 +1,7 @@
-import React, { useRef } from 'react';
+import React, { useRef, useMemo } from 'react';
 import { useFrame } from '@react-three/fiber';
 import { Text } from '@react-three/drei';
+import * as THREE from 'three';
 
 const HologramPanels = () => {
   const groupRef = useRef();
@@ -12,7 +13,7 @@ const HologramPanels = () => {
   });
 
   return (
-    <group ref={groupRef} position={[3, 0, 0]}>
+    <group ref={groupRef} position={[3, 0, 0]} scale={0.8}>
       <Panel position={[4, 0, 0]} rotation={[0, -Math.PI / 2, 0]} text="> SYS_BOOT\n> LOAD MODULES\n> OK" />
       <Panel position={[-4, 0, 0]} rotation={[0, Math.PI / 2, 0]} text="> SECURE_LINK\n> ENCRYPTING\n> ESTABLISHED" />
       <Panel position={[0, 0, -4]} rotation={[0, 0, 0]} text="> RENDER_ENG\n> FPS: 60\n> SYNC: TRUE" />
@@ -21,12 +22,33 @@ const HologramPanels = () => {
 };
 
 const Panel = ({ position, rotation, text }) => {
+  // Create edges geometry once
+  const edges = useMemo(() => new THREE.EdgesGeometry(new THREE.PlaneGeometry(3, 4)), []);
+
   return (
     <group position={position} rotation={rotation}>
+      {/* Glass Body */}
       <mesh>
         <planeGeometry args={[3, 4]} />
-        <meshBasicMaterial color="#00f0ff" transparent opacity={0.05} wireframe={true} />
+        <meshPhysicalMaterial 
+          color="#ffffff" 
+          emissive="#00d0ff"
+          emissiveIntensity={0.1}
+          transparent 
+          opacity={0.05} 
+          roughness={0.1}
+          metalness={0.1}
+          clearcoat={0.5}
+          side={THREE.DoubleSide}
+        />
       </mesh>
+      
+      {/* Subtle Glowing Border */}
+      <lineSegments geometry={edges}>
+        <lineBasicMaterial color="#00d0ff" transparent opacity={0.15} />
+      </lineSegments>
+
+      {/* Text */}
       <Text
         position={[0, 0, 0.1]}
         fontSize={0.2}
