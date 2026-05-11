@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 const navLinks = [
   { name: 'Home', href: '#home', id: 'home' },
@@ -9,6 +10,8 @@ const navLinks = [
 
 const Navbar = () => {
   const [activeSection, setActiveSection] = useState('home');
+  const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -37,28 +40,47 @@ const Navbar = () => {
   }, []);
 
   const handleClick = (e, href) => {
-    if (href.startsWith('#')) {
-      e.preventDefault();
-      const id = href.replace('#', '');
-      const element = document.getElementById(id);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
+    e.preventDefault();
+    if (location.pathname !== '/') {
+      navigate('/' + href);
+      setTimeout(() => {
+        const id = href.replace('#', '');
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    } else {
+      if (href.startsWith('#')) {
+        const id = href.replace('#', '');
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
       }
+    }
+  };
+
+  const handleLogoClick = () => {
+    if (location.pathname !== '/') {
+      navigate('/');
+    } else {
+      window.scrollTo({top: 0, behavior: 'smooth'});
     }
   };
 
   return (
     <motion.nav 
-      className="fixed top-0 left-0 w-full z-50 px-8 md:px-24 py-6 flex items-center justify-between bg-darkBg/40 backdrop-blur-md border-b border-white/5"
+      className="fixed top-0 left-0 w-full z-50 px-8 md:px-24 py-4 flex items-center justify-between bg-darkBg/40 backdrop-blur-md border-b border-white/5"
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
     >
-      <div className="flex items-center cursor-pointer" onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>
+      <div className="flex items-center cursor-pointer" onClick={handleLogoClick}>
        <img 
   src="/logo.png" 
   alt="Logo" 
-  className="h-12 w-auto drop-shadow-[0_0_5px_rgba(0,240,255,0.3)]" 
+  className="h-10 w-auto drop-shadow-[0_0_5px_rgba(0,240,255,0.3)]" 
 />
       </div>
 
@@ -70,7 +92,7 @@ const Navbar = () => {
               key={idx} 
               href={link.href}
               onClick={(e) => handleClick(e, link.href)}
-              className={`transition-colors duration-300 text-sm font-semibold uppercase tracking-wider relative group ${
+              className={`transition-colors duration-300 text-xs font-semibold uppercase tracking-wider relative group ${
                 isActive ? 'text-neonBlue text-glow' : 'text-gray-300 hover:text-neonBlue'
               }`}
             >
@@ -86,12 +108,11 @@ const Navbar = () => {
         
         <a href="#contact" onClick={(e) => handleClick(e, '#contact')}>
           <motion.button
-            className={`px-6 py-2 bg-transparent border font-semibold rounded-full transition-all duration-300 ml-4 text-sm uppercase tracking-wider ${
+            className={`px-6 py-2 bg-transparent border border-neonBlue font-semibold rounded-full transition-all duration-300 ml-4 text-xs uppercase tracking-wider hover:bg-neonBlue hover:text-darkBg neon-glow ${
               activeSection === 'contact' 
-                ? 'border-neonPurple text-white bg-neonPurple neon-glow-purple' 
-                : 'border-neonPurple text-neonPurple hover:bg-neonPurple hover:text-white neon-glow-purple'
+                ? 'text-white' 
+                : 'text-neonBlue'
             }`}
-            whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
             Contact Us

@@ -56,16 +56,16 @@ const Loader = ({ onComplete }) => {
           />
           
           {/* Progress Number */}
-          <div className="absolute font-bold text-3xl tracking-widest text-white text-glow z-10 flex items-baseline translate-x-2">
+          <div className="absolute font-bold text-2xl tracking-widest text-white text-glow z-10 flex items-baseline translate-x-2">
             {Math.floor(progress)}
-            <span className="text-sm text-neonBlue ml-1 font-normal opacity-70">%</span>
+            <span className="text-xs text-neonBlue ml-1 font-normal opacity-70">%</span>
           </div>
         </div>
 
         {/* Brand Text */}
         <div className="mt-14 overflow-hidden h-8 flex items-center justify-center">
           <motion.h1 
-            className="text-lg md:text-xl font-extrabold uppercase tracking-[0.4em] text-transparent bg-clip-text bg-gradient-to-r from-neonBlue to-neonPurple"
+            className="text-base md:text-lg font-extrabold uppercase tracking-[0.4em] text-transparent bg-clip-text bg-gradient-to-r from-neonBlue to-neonPurple"
             initial={{ y: 40, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}

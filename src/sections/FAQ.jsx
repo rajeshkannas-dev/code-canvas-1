@@ -14,7 +14,7 @@ const FAQ = () => {
   return (
     <section className="relative w-full py-24 px-8 md:px-24 z-10 flex flex-col items-center pointer-events-none">
       <div className="w-full text-center mb-20 md:mb-28 pointer-events-auto z-10 relative">
-        <h2 className="text-2xl md:text-4xl font-extrabold uppercase tracking-[0.2em] text-glow-purple inline-block relative">
+        <h2 className="text-lg md:text-2xl font-extrabold uppercase tracking-[0.2em] text-glow-purple inline-block relative">
           FAQ
           <span className="absolute -bottom-6 left-1/2 -translate-x-1/2 w-32 h-[2px] bg-gradient-to-r from-transparent via-neonPurple to-transparent opacity-50"></span>
         </h2>
@@ -27,7 +27,7 @@ const FAQ = () => {
               className={`w-full text-left p-6 glass-card border transition-colors duration-300 flex justify-between items-center ${activeIndex === idx ? 'border-neonPurple bg-white/10' : 'border-white/10 hover:border-white/30'}`}
               onClick={() => setActiveIndex(activeIndex === idx ? null : idx)}
             >
-              <span className="text-base font-semibold text-white">{faq.question}</span>
+              <span className="text-sm font-semibold text-white">{faq.question}</span>
               <motion.div
                 animate={{ rotate: activeIndex === idx ? 180 : 0 }}
                 transition={{ duration: 0.3 }}
@@ -44,7 +44,7 @@ const FAQ = () => {
                   transition={{ duration: 0.3 }}
                   className="overflow-hidden"
                 >
-                  <div className="p-6 text-gray-300 border-l border-r border-b border-neonPurple/50 rounded-b-xl bg-darkBg/50 backdrop-blur-md">
+                  <div className="p-6 text-sm text-gray-300 border-l border-r border-b border-neonPurple/50 rounded-b-xl bg-darkBg/50 backdrop-blur-md">
                     {faq.answer}
                   </div>
                 </motion.div>

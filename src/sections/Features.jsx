@@ -58,7 +58,7 @@ const Features = () => {
   return (
     <section id="features" className="relative w-full min-h-screen py-24 px-8 md:px-24 z-10 flex flex-col items-center justify-center overflow-hidden">
       <div className="w-full text-center mb-20 md:mb-28">
-        <h2 className="text-2xl md:text-4xl font-extrabold uppercase tracking-[0.2em] text-glow-purple inline-block relative">
+        <h2 className="text-lg md:text-2xl font-extrabold uppercase tracking-[0.2em] text-glow-purple inline-block relative">
           Core Features
           <span className="absolute -bottom-6 left-1/2 -translate-x-1/2 w-32 h-[2px] bg-gradient-to-r from-transparent via-neonPurple to-transparent opacity-50"></span>
         </h2>
@@ -97,7 +97,7 @@ const Features = () => {
                       {feat.icon}
                     </div>
                     <div className="flex flex-col">
-                      <span className={`font-bold text-lg tracking-wide transition-colors duration-500 ${isActive ? 'text-white' : 'text-gray-400 group-hover:text-white'}`}>
+                      <span className={`font-semibold text-base tracking-wide transition-colors duration-500 ${isActive ? 'text-white' : 'text-gray-400 group-hover:text-white'}`}>
                         {feat.label}
                       </span>
                       <span className={`text-xs mt-1 max-w-[180px] sm:max-w-[240px] truncate transition-colors duration-500 ${isActive ? 'text-gray-400' : 'text-gray-600 group-hover:text-gray-400'}`}>
@@ -152,11 +152,11 @@ const Features = () => {
                 <div className="relative w-full h-[45%] px-8 pb-8 flex flex-col justify-end bg-black/40 backdrop-blur-md">
                   <div className={`absolute -top-10 -right-10 w-32 h-32 rounded-full blur-[60px] pointer-events-none transition-colors duration-1000 ${featureData[activeIdx].bgGlow}`} />
                   
-                  <h3 className="text-3xl font-extrabold text-white mb-4 tracking-wide relative z-10">
+                  <h3 className="text-lg font-semibold text-white mb-4 tracking-wide relative z-10">
                     {featureData[activeIdx].label}
                   </h3>
                   
-                  <p className="text-gray-300 text-sm md:text-base leading-relaxed relative z-10">
+                  <p className="text-gray-300 text-xs md:text-sm leading-relaxed relative z-10">
                     {featureData[activeIdx].desc}
                   </p>
 

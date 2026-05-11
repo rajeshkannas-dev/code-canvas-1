@@ -6,16 +6,17 @@ import CanvasContainer from './components/CanvasContainer';
 import Navbar from './components/Navbar';
 import Loader from './components/Loader';
 
-import Hero from './sections/Hero';
-import Services from './sections/Services';
-import Process from './sections/Process';
-import Features from './sections/Features';
-import ProjectShowcase from './sections/ProjectShowcase';
-import TechStack from './sections/TechStack';
-import Testimonials from './sections/Testimonials';
-import FAQ from './sections/FAQ';
-import FooterCTA from './sections/FooterCTA';
-import Footer from './sections/Footer';
+import { Routes, Route, useLocation } from 'react-router-dom';
+import Home from './pages/Home';
+import PolicyPage from './pages/PolicyPage';
+
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+  return null;
+};
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -37,23 +38,18 @@ function App() {
         {isLoading && <Loader key="loader" onComplete={() => setIsLoading(false)} />}
       </AnimatePresence>
 
+      <ScrollToTop />
       <SmoothScroll>
       <CustomCursor />
       <CanvasContainer />
       <Navbar />
       <main className="relative z-10 w-full font-sans">
-        <Hero />
-        <div className="bg-darkBg/80 backdrop-blur-sm relative z-10">
-          <Services />
-          <Process />
-          <Features />
-          <ProjectShowcase />
-          <TechStack />
-          <Testimonials />
-          <FAQ />
-          <FooterCTA />
-          <Footer />
-        </div>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/terms" element={<PolicyPage title="Terms and Conditions" />} />
+          <Route path="/privacy" element={<PolicyPage title="Privacy Policy" />} />
+          <Route path="/refund" element={<PolicyPage title="Refund Policy" />} />
+        </Routes>
       </main>
     </SmoothScroll>
     </>

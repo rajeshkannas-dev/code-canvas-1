@@ -14,14 +14,14 @@ const Hero = () => {
         >
           <div className="relative inline-block group cursor-default hover:scale-105 transition-transform duration-500">
             {/* Default State (Before Hover) */}
-            <h1 className="text-3xl md:text-5xl font-bold font-sans leading-tight uppercase transition-opacity duration-500 group-hover:opacity-0 flex flex-col">
+            <h1 className="text-2xl md:text-4xl font-bold font-sans leading-tight uppercase transition-opacity duration-500 group-hover:opacity-0 flex flex-col">
               <div className="text-white">Let's Help</div>
               <div className="text-white">Technology Meet</div>
               <div className="mt-2 text-transparent bg-clip-text bg-gradient-to-r from-neonPurple to-neonBlue drop-shadow-[0_0_8px_rgba(0,240,255,0.3)]">Innovators</div>
             </h1>
 
             {/* Hover State (Vertical Gradient) */}
-            <h1 className="absolute top-0 left-0 w-full h-full text-3xl md:text-5xl font-bold font-sans leading-tight uppercase transition-opacity duration-500 opacity-0 group-hover:opacity-100 pointer-events-none bg-gradient-to-b from-neonPurple to-neonBlue bg-clip-text text-transparent flex flex-col">
+            <h1 className="absolute top-0 left-0 w-full h-full text-2xl md:text-4xl font-bold font-sans leading-tight uppercase transition-opacity duration-500 opacity-0 group-hover:opacity-100 pointer-events-none bg-gradient-to-b from-neonPurple to-neonBlue bg-clip-text text-transparent flex flex-col">
               <div>Let's Help</div>
               <div>Technology Meet</div>
               <div className="mt-2">Innovators</div>
@@ -31,7 +31,7 @@ const Hero = () => {
         
         {/* Paragraph */}
         <motion.p 
-          className="text-sm md:text-base text-gray-300 mb-10 max-w-lg leading-relaxed"
+          className="text-xs md:text-sm text-gray-300 mb-10 max-w-lg leading-relaxed"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.6 }}
@@ -41,7 +41,7 @@ const Hero = () => {
         
         {/* Button */}
         <motion.button
-          className="px-10 py-3 bg-transparent border-2 border-neonBlue text-neonBlue font-semibold rounded-full hover:bg-neonBlue hover:text-darkBg transition-all duration-300 neon-glow tracking-widest text-sm"
+          className="px-6 py-2 bg-transparent border border-neonBlue text-neonBlue font-semibold rounded-full hover:bg-neonBlue hover:text-darkBg transition-all duration-300 neon-glow tracking-widest text-xs"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           initial={{ opacity: 0 }}

@@ -104,7 +104,7 @@ const ServiceCard = ({ item, idx, isLast }) => {
 
         {/* Bottom Section: Text */}
         <div className="relative z-10 transform translate-z-10 group-hover:-translate-y-2 transition-transform duration-500">
-          <h3 className="text-xl font-bold mb-3 text-white group-hover:text-neonBlue transition-colors duration-500">{item.title}</h3>
+          <h3 className="text-base font-semibold mb-3 text-white group-hover:text-neonBlue transition-colors duration-500">{item.title}</h3>
           <p className="text-gray-400 text-sm leading-relaxed line-clamp-3 group-hover:text-gray-300 transition-colors duration-500">{item.desc}</p>
         </div>
       </motion.div>
@@ -145,7 +145,7 @@ const ProjectShowcase = () => {
     <section id="services" ref={targetRef} className="relative w-full h-[300vh] z-10 pointer-events-none">
       <div className="sticky top-0 h-screen flex flex-col justify-center overflow-hidden pointer-events-none">
         <div className="w-full px-8 md:px-24 mb-20 md:mb-28 pointer-events-auto z-10 relative">
-          <h2 className="text-2xl md:text-4xl font-extrabold uppercase tracking-[0.2em] text-glow inline-block relative">
+          <h2 className="text-lg md:text-2xl font-extrabold uppercase tracking-[0.2em] text-glow inline-block relative">
             Services
             <span className="absolute -bottom-6 left-0 w-32 h-[2px] bg-gradient-to-r from-neonBlue to-transparent opacity-50"></span>
           </h2>

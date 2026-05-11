@@ -16,13 +16,13 @@ const Services = () => {
         {/* Content Side */}
         <div className="w-full lg:w-1/2 flex flex-col">
           <div className="w-full mb-16 md:mb-20 pointer-events-auto z-10 relative">
-            <h2 className="text-2xl md:text-4xl font-extrabold uppercase tracking-[0.2em] text-glow-purple inline-block relative">
+            <h2 className="text-lg md:text-2xl font-extrabold uppercase tracking-[0.2em] text-glow-purple inline-block relative">
               About Us
               <span className="absolute -bottom-6 left-0 w-32 h-[2px] bg-gradient-to-r from-neonPurple to-transparent opacity-50"></span>
             </h2>
           </div>
-          <h3 className="text-base font-semibold mb-4 text-neonBlue">100+ Team Strength</h3>
-          <h4 className="text-sm md:text-base font-medium mb-6 text-white">Together, We Can Conquer Any Challenge</h4>
+          <h3 className="text-lg font-semibold mb-4 text-neonBlue">100+ Team Strength</h3>
+          <h4 className="text-sm font-medium mb-6 text-white">Together, We Can Conquer Any Challenge</h4>
           <p className="text-sm text-gray-400 mb-8 leading-relaxed">
             Our team of highly skilled and experienced developers delivers exceptional user experiences across web and mobile applications. Over the years, we have consistently achieved our goals, building websites and apps with high traffic and strong user ratings. Our mission is to help startups grow into industry leaders by creating innovative solutions with a team of dedicated problem solvers.
           </p>

@@ -17,7 +17,7 @@ const TechStack = () => {
   return (
     <section className="relative w-full py-24 px-8 md:px-24 z-10 pointer-events-none">
       <div className="w-full text-center mb-20 md:mb-28 pointer-events-auto z-10 relative">
-        <h2 className="text-2xl md:text-4xl font-extrabold uppercase tracking-[0.2em] text-glow-purple inline-block relative">
+        <h2 className="text-lg md:text-2xl font-extrabold uppercase tracking-[0.2em] text-glow-purple inline-block relative">
           Tech Stack
           <span className="absolute -bottom-6 left-1/2 -translate-x-1/2 w-32 h-[2px] bg-gradient-to-r from-transparent via-neonPurple to-transparent opacity-50"></span>
         </h2>
@@ -37,7 +37,7 @@ const TechStack = () => {
               transition={{ type: "spring", stiffness: 300 }}
             >
               <Icon className="w-8 h-8 text-gray-400 group-hover:text-neonPurple transition-colors duration-300" strokeWidth={1.5} />
-              <span className="text-sm md:text-base font-semibold text-gray-300 group-hover:text-white transition-colors duration-300">{item.name}</span>
+              <span className="text-sm font-medium text-gray-300 group-hover:text-white transition-colors duration-300">{item.name}</span>
             </motion.div>
           );
         })}

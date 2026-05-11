@@ -43,8 +43,8 @@ const ProcessStep = ({ step, index }) => {
           viewport={{ margin: "10000px 0px -40% 0px" }}
           transition={{ duration: 0.4 }}
         />
-        <h3 className="text-lg font-bold mb-2 text-white">{step.title}</h3>
-        <p className="text-gray-400">{step.desc}</p>
+        <h3 className="text-base font-semibold mb-2 text-white">{step.title}</h3>
+        <p className="text-sm text-gray-400">{step.desc}</p>
       </motion.div>
     </motion.div>
   );
@@ -62,7 +62,7 @@ const Process = () => {
   return (
     <section id="process" ref={containerRef} className="relative w-full min-h-screen py-24 px-8 md:px-24 z-10">
       <div className="w-full text-center mb-20 md:mb-28 pointer-events-auto z-10 relative">
-        <h2 className="text-2xl md:text-4xl font-extrabold uppercase tracking-[0.2em] text-glow inline-block relative">
+        <h2 className="text-lg md:text-2xl font-extrabold uppercase tracking-[0.2em] text-glow inline-block relative">
           Our Process
           <span className="absolute -bottom-6 left-1/2 -translate-x-1/2 w-32 h-[2px] bg-gradient-to-r from-transparent via-neonBlue to-transparent opacity-50"></span>
         </h2>
