@@ -15,11 +15,11 @@ const tech = [
 
 const TechStack = () => {
   return (
-    <section className="relative w-full py-24 px-8 md:px-24 z-10 pointer-events-none">
-      <div className="w-full text-center mb-20 md:mb-28 pointer-events-auto z-10 relative">
-        <h2 className="text-lg md:text-2xl font-extrabold uppercase tracking-[0.2em] text-glow-purple inline-block relative">
+    <section className="relative w-full py-24 px-4 md:px-12 lg:px-24 z-10 pointer-events-none">
+      <div className="w-full text-center mb-16 md:mb-28 pointer-events-auto z-10 relative">
+        <h2 className="text-lg md:text-2xl font-extrabold uppercase tracking-[0.2em] text-glow-indigo inline-block relative">
           Tech Stack
-          <span className="absolute -bottom-6 left-1/2 -translate-x-1/2 w-32 h-[2px] bg-gradient-to-r from-transparent via-neonPurple to-transparent opacity-50"></span>
+          <span className="absolute -bottom-6 left-1/2 -translate-x-1/2 w-32 h-[2px] bg-gradient-to-r from-transparent via-brandIndigo to-transparent opacity-50"></span>
         </h2>
       </div>
       
@@ -27,17 +27,17 @@ const TechStack = () => {
         {tech.map((item, idx) => {
           const Icon = item.icon;
           return (
-            <motion.div
+              <motion.div
               key={idx}
-              className="h-28 glass-card border border-white/10 flex flex-col items-center justify-center gap-3 hover:border-neonPurple hover:bg-neonPurple/10 transition-colors duration-300 cursor-default group"
+              className="h-28 glass-card border border-white/10 flex flex-col items-center justify-center gap-3 hover:border-brandIndigo hover:bg-brandIndigo/10 transition-colors duration-300 cursor-default group"
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               whileHover={{ scale: 1.05, y: -5 }}
-              transition={{ type: "spring", stiffness: 300 }}
+              transition={{ duration: 0.5, delay: idx * 0.1, type: "spring", stiffness: 300 }}
             >
-              <Icon className="w-8 h-8 text-gray-400 group-hover:text-neonPurple transition-colors duration-300" strokeWidth={1.5} />
-              <span className="text-sm font-medium text-gray-300 group-hover:text-white transition-colors duration-300">{item.name}</span>
+              <Icon className="w-8 h-8 text-slate-400 group-hover:text-brandIndigo transition-colors duration-300" strokeWidth={1.5} />
+              <span className="text-sm font-medium text-slate-500 group-hover:text-slate-300 transition-colors duration-300">{item.name}</span>
             </motion.div>
           );
         })}

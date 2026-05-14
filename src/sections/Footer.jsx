@@ -38,7 +38,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="w-full bg-black/80 backdrop-blur-sm border-t border-white/5 py-16 px-8 md:px-24 z-10 relative">
+    <footer className="w-full bg-black/80 backdrop-blur-sm border-t border-white/5 py-16 px-4 md:px-12 lg:px-24 z-10 relative">
       <div className="max-w-5xl mx-auto flex flex-col md:flex-row justify-between gap-12 md:gap-16">
         
         {/* Brand Section */}
@@ -47,10 +47,10 @@ const Footer = () => {
             <img 
               src="/logo.png" 
               alt="Code Canvas Logo" 
-              className="h-12 w-auto drop-shadow-[0_0_5px_rgba(0,240,255,0.3)]" 
+              className="h-12 w-auto drop-shadow-[0_0_5px_rgba(34,211,238,0.3)]" 
             />
           </div>
-          <p className="text-gray-400 text-sm leading-relaxed">
+          <p className="text-slate-400 text-sm leading-relaxed">
             The goal of our highly trained and experienced team is to deliver great user experiences for mobile and web applications.
           </p>
         </div>
@@ -60,11 +60,11 @@ const Footer = () => {
           
           {/* Quick Links */}
           <div>
-          <h4 className="text-base font-semibold text-white mb-6 uppercase tracking-wider">Quick Links</h4>
+          <h4 className="text-base font-semibold text-slate-300 mb-6 uppercase tracking-wider">Quick Links</h4>
           <ul className="flex flex-col gap-3">
             {quickLinks.map((link, idx) => (
               <li key={idx}>
-                <a href={link.href} onClick={(e) => handleQuickLinkClick(e, link.href)} className="text-gray-400 hover:text-neonBlue transition-colors duration-300 text-sm">
+                <a href={link.href} onClick={(e) => handleQuickLinkClick(e, link.href)} className="text-slate-400 hover:text-brandCyan transition-colors duration-300 text-sm">
                   {link.name}
                 </a>
               </li>
@@ -74,7 +74,7 @@ const Footer = () => {
 
           {/* Policies */}
           <div>
-          <h4 className="text-base font-semibold text-white mb-6 uppercase tracking-wider">Policies</h4>
+          <h4 className="text-base font-semibold text-slate-300 mb-6 uppercase tracking-wider">Policies</h4>
           <ul className="flex flex-col gap-3">
             {[
               { name: 'Terms and Conditions', path: '/terms' },
@@ -82,7 +82,7 @@ const Footer = () => {
               { name: 'Refund Policy', path: '/refund' }
             ].map((link, idx) => (
               <li key={idx}>
-                <Link to={link.path} className="text-gray-400 hover:text-neonBlue transition-colors duration-300 text-sm">
+                <Link to={link.path} className="text-slate-400 hover:text-brandCyan transition-colors duration-300 text-sm">
                   {link.name}
                 </Link>
               </li>
@@ -95,7 +95,7 @@ const Footer = () => {
       </div>
 
       <div className="max-w-5xl mx-auto mt-16 pt-8 border-t border-white/10 flex justify-center text-center">
-        <p className="text-gray-500 text-xs">
+        <p className="text-slate-500 text-xs">
           &copy; 2026 Code Canvas. All rights reserved.
         </p>
       </div>

@@ -64,7 +64,7 @@ const WebDevPanel = ({ position, rotation }) => {
       <Text
         position={[0, 0, 0.1]}
         fontSize={0.18}
-        color="#00f0ff"
+        color="#22d3ee"
         maxWidth={2.5}
         textAlign="left"
         anchorX="center"
@@ -94,7 +94,7 @@ const ReactPanel = ({ position, rotation }) => {
       <Text
         position={[0, 0, 0.1]}
         fontSize={0.16}
-        color="#00f0ff"
+        color="#22d3ee"
         maxWidth={2.6}
         textAlign="left"
         anchorX="center"
@@ -125,7 +125,7 @@ const PythonPanel = ({ position, rotation }) => {
       <Text
         position={[0, 0, 0.1]}
         fontSize={0.16}
-        color="#00f0ff"
+        color="#22d3ee"
         maxWidth={2.6}
         textAlign="left"
         anchorX="center"

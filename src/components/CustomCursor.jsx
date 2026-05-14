@@ -45,12 +45,12 @@ const CustomCursor = () => {
   return (
     <>
       <motion.div
-        className="fixed top-0 left-0 w-8 h-8 rounded-full border-2 border-neonBlue pointer-events-none z-[9999] neon-glow hidden md:block"
+        className="fixed top-0 left-0 w-8 h-8 rounded-full border-2 border-brandCyan pointer-events-none z-[9999] brand-glow hidden md:block"
         variants={variants}
         animate="default"
       />
       <motion.div
-        className="fixed top-0 left-0 w-2 h-2 bg-neonBlue rounded-full pointer-events-none z-[10000] hidden md:block"
+        className="fixed top-0 left-0 w-2 h-2 bg-brandCyan rounded-full pointer-events-none z-[10000] hidden md:block"
         variants={dotVariants}
         animate="default"
         transition={{ type: "tween", ease: "backOut", duration: 0.1 }}

@@ -38,13 +38,13 @@ const Loader = ({ onComplete }) => {
         <div className="relative w-40 h-40 flex items-center justify-center">
           {/* Outer blue ring */}
           <motion.div 
-            className="absolute inset-0 rounded-full border-t-2 border-r-2 border-neonBlue opacity-60 shadow-[0_0_20px_rgba(0,240,255,0.4)]"
+            className="absolute inset-0 rounded-full border-t-2 border-r-2 border-brandCyan opacity-60 shadow-[0_0_20px_rgba(34,211,238,0.4)]"
             animate={{ rotate: 360 }}
             transition={{ duration: 1.5, repeat: Infinity, ease: "linear" }}
           />
           {/* Inner purple ring */}
           <motion.div 
-            className="absolute inset-4 rounded-full border-b-2 border-l-2 border-neonPurple opacity-60 shadow-[0_0_20px_rgba(106,92,255,0.4)]"
+            className="absolute inset-4 rounded-full border-b-2 border-l-2 border-brandIndigo opacity-60 shadow-[0_0_20px_rgba(99,102,241,0.4)]"
             animate={{ rotate: -360 }}
             transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
           />
@@ -58,14 +58,14 @@ const Loader = ({ onComplete }) => {
           {/* Progress Number */}
           <div className="absolute font-bold text-2xl tracking-widest text-white text-glow z-10 flex items-baseline translate-x-2">
             {Math.floor(progress)}
-            <span className="text-xs text-neonBlue ml-1 font-normal opacity-70">%</span>
+            <span className="text-xs text-brandCyan ml-1 font-normal opacity-70">%</span>
           </div>
         </div>
 
         {/* Brand Text */}
         <div className="mt-14 overflow-hidden h-8 flex items-center justify-center">
           <motion.h1 
-            className="text-base md:text-lg font-extrabold uppercase tracking-[0.4em] text-transparent bg-clip-text bg-gradient-to-r from-neonBlue to-neonPurple"
+            className="text-base md:text-lg font-extrabold uppercase tracking-[0.4em] text-transparent bg-clip-text bg-gradient-to-r from-brandCyan to-brandIndigo"
             initial={{ y: 40, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
@@ -77,7 +77,7 @@ const Loader = ({ onComplete }) => {
         {/* Loading Bar */}
         <div className="w-64 h-[2px] bg-white/10 mt-8 rounded-full overflow-hidden relative">
           <motion.div 
-            className="absolute left-0 top-0 bottom-0 bg-gradient-to-r from-neonBlue to-neonPurple"
+            className="absolute left-0 top-0 bottom-0 bg-gradient-to-r from-brandCyan to-brandIndigo"
             style={{ width: `${progress}%` }}
           />
           {/* Scanning glow effect on the bar */}
@@ -91,8 +91,8 @@ const Loader = ({ onComplete }) => {
       </div>
       
       {/* Background ambient glows */}
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-neonBlue/10 rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-neonPurple/10 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-brandCyan/10 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-brandIndigo/10 rounded-full blur-[120px] pointer-events-none" />
     </motion.div>
   );
 };

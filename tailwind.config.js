@@ -7,12 +7,13 @@ export default {
   theme: {
     extend: {
       colors: {
-        neonBlue: '#00f0ff',
-        neonPurple: '#6a5cff',
+        brandCyan: '#22d3ee',
+        brandIndigo: '#6366f1',
         darkBg: '#0a0a0a',
       },
       fontFamily: {
-        sans: ['Inter', 'sans-serif'],
+        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+        display: ['"Space Grotesk"', 'sans-serif'],
       },
     },
   },

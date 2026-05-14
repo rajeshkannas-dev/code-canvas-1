@@ -61,12 +61,12 @@ const Joystick = () => {
         {/* Inner Cyan Ring */}
         <mesh>
           <ringGeometry args={[2.5, 2.55, 64]} />
-          <meshBasicMaterial color="#00f0ff" transparent opacity={0.8} toneMapped={false} />
+          <meshBasicMaterial color="#22d3ee" transparent opacity={0.8} toneMapped={false} />
         </mesh>
         {/* Outer Purple Ring */}
         <mesh>
           <ringGeometry args={[3.2, 3.23, 64]} />
-          <meshBasicMaterial color="#6a5cff" transparent opacity={0.5} toneMapped={false} />
+          <meshBasicMaterial color="#6366f1" transparent opacity={0.5} toneMapped={false} />
         </mesh>
       </group>
 
@@ -80,21 +80,21 @@ const Joystick = () => {
         <Text
           position={[0, 0, 1.76]}
           fontSize={0.25}
-          color="#00f0ff"
+          color="#22d3ee"
           anchorX="center"
           anchorY="middle"
           letterSpacing={0.1}
           font="https://fonts.gstatic.com/s/inter/v12/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuGKYMZhrib2Bg-4.ttf"
         >
           {`< CODE / PLAY >`}
-          <meshBasicMaterial color="#00f0ff" toneMapped={false} />
+          <meshBasicMaterial color="#22d3ee" toneMapped={false} />
         </Text>
       </group>
       
       {/* Base Accent Ring (Cyan glow where stick meets base) */}
       <mesh position={[0, -0.6, 0]} rotation={[Math.PI / 2, 0, 0]}>
         <torusGeometry args={[0.5, 0.08, 16, 64]} />
-        <meshBasicMaterial color="#00f0ff" toneMapped={false} />
+        <meshBasicMaterial color="#22d3ee" toneMapped={false} />
       </mesh>
       
       {/* Stick */}
@@ -107,7 +107,7 @@ const Joystick = () => {
       <mesh ref={topRef} position={[0, 2.6, 0]}>
         <sphereGeometry args={[0.8, 64, 64]} />
         <meshPhysicalMaterial 
-          color="#6a5cff" 
+          color="#6366f1" 
           emissive="#2a106c"
           emissiveIntensity={0.2}
           metalness={0.2} 
